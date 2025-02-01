@@ -37,4 +37,10 @@ return {
       colorscheme = "cyberdream",
     },
   },
+  {
+    "snacks.nvim",
+    opts = {
+      scroll = { enabled = false },
+    },
+  },
 }
