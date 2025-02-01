@@ -22,6 +22,7 @@ return {
     config = function()
       require("cyberdream").setup({
         transparent = true,
+        borderless_telescope = false,
         saturation = 0.5,
         theme = {
           variant = "auto",
