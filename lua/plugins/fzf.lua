@@ -98,22 +98,23 @@ return {
         })
       end,
       winopts = {
-        width = 1,
-        height = 1,
-        row = 0,
-        col = 0,
+        fullscreen = true, -- start fullscreen?
         preview = {
           scrollchars = { "┃", "" },
         },
       },
       files = {
-        cwd_prompt = false,
+
+        no_header_i = true,
+        cwd_prompt = true,
         actions = {
           ["alt-i"] = { actions.toggle_ignore },
           ["alt-h"] = { actions.toggle_hidden },
         },
       },
       grep = {
+        no_header = true, -- hide grep|cwd header?
+        no_header_i = true,
         actions = {
           ["alt-i"] = { actions.toggle_ignore },
           ["alt-h"] = { actions.toggle_hidden },
