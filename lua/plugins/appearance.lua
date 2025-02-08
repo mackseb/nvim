@@ -59,10 +59,8 @@ return {
       end,
     },
   },
-  {
-    -- disable tabs
-    { "akinsho/bufferline.nvim", enabled = false },
-  },
+  -- disable tabs
+  { "akinsho/bufferline.nvim", enabled = false },
   {
     "nvim-lualine/lualine.nvim",
     opts = {
