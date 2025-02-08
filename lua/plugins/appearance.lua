@@ -42,10 +42,10 @@ return {
       "tadaa/vimade",
       config = function()
         require("vimade").setup({
-          recipe = { "minimalist", { animate = false } },
-          fadelevel = 0.7,
+          recipe = { "default", { animate = false } },
+          -- fadelevel = 0.8,
           tint = {
-            bg = { rgb = { 0, 0, 0 }, intensity = 0.1 }, -- adds 30% black to background
+            bg = { rgb = { 0, 0, 0 }, intensity = 0.05 }, -- adds 30% black to background
             -- fg = {rgb={0,0,255}, intensity=0.3}, -- adds 30% blue to foreground
             -- fg = {rgb={120,120,120}, intensity=1}, -- all text will be gray
             -- sp = {rgb={255,0,0}, intensity=0.5}, -- adds 50% red to special characters
