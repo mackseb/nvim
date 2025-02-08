@@ -78,4 +78,20 @@ return {
       },
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    opts = {
+      winopts = {
+        fullscreen = true,
+      },
+      files = {
+        no_header_i = true,
+        cwd_prompt = true,
+      },
+      grep = {
+        no_header = true,
+        no_header_i = true,
+      },
+    },
+  },
 }
