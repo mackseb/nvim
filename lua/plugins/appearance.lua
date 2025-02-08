@@ -94,4 +94,20 @@ return {
       },
     },
   },
+  {
+    "saghen/blink.cmp",
+    opts = {
+      appearance = {
+        nerd_font_variant = "normal",
+      },
+      completion = {
+        menu = {
+          border = "rounded",
+        },
+        documentation = {
+          window = { border = "rounded" },
+        },
+      },
+    },
+  },
 }
