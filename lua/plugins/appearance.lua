@@ -79,6 +79,9 @@ return {
   {
     "folke/snacks.nvim",
     opts = {
+      matcher = {
+        frecency = true, -- frecency bonus
+      },
       picker = {
         layout = {
           layout = {
