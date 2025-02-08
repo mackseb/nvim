@@ -77,18 +77,25 @@ return {
     },
   },
   {
-    "ibhagwan/fzf-lua",
+    "folke/snacks.nvim",
     opts = {
-      winopts = {
-        fullscreen = true,
-      },
-      files = {
-        no_header_i = true,
-        cwd_prompt = true,
-      },
-      grep = {
-        no_header = true,
-        no_header_i = true,
+      picker = {
+        layout = {
+          layout = {
+            box = "horizontal",
+            width = 0,
+            min_width = 120,
+            height = 0,
+            {
+              box = "vertical",
+              border = "rounded",
+              title = "{title} {live} {flags}",
+              { win = "input", height = 1, border = "bottom" },
+              { win = "list", border = "none" },
+            },
+            { win = "preview", title = "{preview}", border = "rounded", width = 0.5 },
+          },
+        },
       },
     },
   },
