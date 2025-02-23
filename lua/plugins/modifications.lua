@@ -16,25 +16,61 @@ return {
   --   },
   -- },
   {
-    "scottmckendry/cyberdream.nvim",
-    lazy = false,
-    priority = 1000,
-    opts = {},
+    "projekt0n/github-nvim-theme",
+    name = "github-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000, -- make sure to load this before all the other start plugins
     config = function()
-      require("cyberdream").setup({
-        variant = "light",
-        transparent = false,
-        borderless_pickers = false,
-        saturation = 1,
+      -- local palette = require("github-theme.palette").load("github_light")
+      --
+      -- print(vim.inspect(palette.red))
+
+      require("github-theme").setup({
+        options = {
+          transparent = true,
+        },
+        -- groups = {
+        --   github_light = {
+        --     comment = "#31A851",
+        --   },
+        -- },
+        specs = {
+          -- Custom duskfox with black background
+          github_light = {
+            -- comment = "#31A851",
+            bg1 = "NONE", -- Black background
+            -- fg2 = "#ffffff",
+            -- bg0 = "#ffffff", -- Alt backgrounds (floats, statusline, ...)
+            bg3 = "#7DABD7", -- 55% darkened from stock
+            sel0 = "#7DABD7", -- 55% darkened from stock
+            sel1 = "#7DABD7", -- 55% darkened from stock
+          },
+        },
       })
 
-      -- vim.cmd("colorscheme cyberdream")
+      -- vim.cmd("colorscheme github_light")
     end,
   },
+  -- {
+  --   "scottmckendry/cyberdream.nvim",
+  --   lazy = false,
+  --   priority = 1000,
+  --   opts = {},
+  --   config = function()
+  --     require("cyberdream").setup({
+  --       variant = "light",
+  --       transparent = false,
+  --       borderless_pickers = false,
+  --       saturation = 1,
+  --     })
+  --
+  --     -- vim.cmd("colorscheme cyberdream")
+  --   end,
+  -- },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "cyberdream",
+      colorscheme = "github_light",
     },
   },
   {
@@ -61,24 +97,19 @@ return {
   },
   -- disable tabs
   { "akinsho/bufferline.nvim", enabled = false },
+  { "nvim-lualine/lualine.nvim", enabled = false },
+  { "echasnovski/mini.pairs", enabled = false },
   {
-    "nvim-lualine/lualine.nvim",
-    opts = {
-      -- options = {
-      --   section_separators = { left = "", right = "" },
-      -- },
-      sections = {
-        lualine_z = {
-          "encoding",
-          "fileformat",
-          "filetype",
-        },
-      },
-    },
+    "echasnovski/mini.statusline",
+    version = false,
+    config = function()
+      require("mini.statusline").setup()
+    end,
   },
   {
     "folke/snacks.nvim",
     opts = {
+      scroll = { enabled = false },
       matcher = {
         frecency = true, -- frecency bonus
       },
@@ -99,6 +130,20 @@ return {
             { win = "preview", title = "{preview}", border = "rounded", width = 0.5 },
           },
         },
+      },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      diagnostics = {
+        underline = true,
+      },
+      inlay_hints = {
+        enabled = false,
+      },
+      document_highlight = {
+        enabled = false,
       },
     },
   },
